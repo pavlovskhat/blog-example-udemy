@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Commune of cats
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/logo.jpg" %}" alt="website logo"/>
+            <h2>COMMUNE OF CATS</h2>
+        </header>
+        <p>Welcome to the commune of cats home page.</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+            	{% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="about">
+    <h2>What I do</h2>
+
+    <p>
+        About me text here.
+    </p>
+    <p>
+        Current goals
+    </p>
+
+    </section>
+{% endblock %}
